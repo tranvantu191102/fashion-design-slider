@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 13px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    background-color: transparent;
+    padding: 0 60px;
+}
+
+.menu i {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.cart {
+    padding: 5px;
+    font-size: 2rem;
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+}
+
+.cart>span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2px 4px;
+    background-color: rgb(243, 43, 43);
+    border-radius: 100%;
+    color: #fff;
+    font-size: .9rem;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #fff;
+}
+
+.slide {
+    width: 40%;
+    position: relative;
+    height: 100%;
+}
+
+.slide__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* justify-content: flex-end; */
+    padding-left: 60px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    top: 50%;
+    left: 0;
+}
+
+.slide__item.active {
+    visibility: visible;
+    opacity: 100;
+    transition: all .5s ease;
+}
+
+.slide__item .title {
+    font-size: 6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+    height: fit-content;
+    position: absolute;
+    top: -200px;
+    z-index: 9999;
+    left: 0;
+    padding-left: 60px;
+}
+
+.slide__item .yellow {
+    color: rgb(252, 252, 64);
+}
+
+.slide__item .copyright {
+    font-size: 1rem;
+    color: unset;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.slide__item .description {
+    font-size: 1.1rem;
+    color: unset;
+    line-height: 1.3;
+    text-align: justify;
+}
+
+.slide__item .button {
+    padding: 15px 50px;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.slide__item .button:hover {
+    border: 1px solid transparent;
+    color: #000;
+    background-color: #fff;
+    transition: all .5s;
+}
+
+.left-to-right {
+    transform: translateX(-200px);
+}
+
+.slide__item.active .left-to-right {
+    transform: translateX(0);
+    transition: all 1s ease-in;
+}
+
+.right-to-left {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+.slide__item.active .right-to-left {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 1.2s ease;
+}
+
+.bottom-to-top {
+    transform: translateY(200px);
+    opacity: 0;
+}
+
+.slide__item.active .bottom-to-top {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 1.2s ease;
+}
+
+
+
+.images {
+    width: 60%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img__item {
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .8s ease;
+}
+
+.img__item:nth-child(1) {
+    width: 55%;
+    height: 80%;
+    left: 10px;
+    z-index: 4;
+}
+
+.img__item:nth-child(2) {
+    width: 45%;
+    height: 75%;
+    left: 30%;
+    z-index: 3;
+}
+
+.img__item:nth-child(3) {
+    width: 35%;
+    height: 65%;
+    left: 60%;
+    z-index: 2;
+}
+
+.img__item:nth-child(4) {
+    width: 35%;
+    height: 65%;
+    z-index: 0;
+}
+
+.control {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.control:hover {
+    opacity: .5;
+}
